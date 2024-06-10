@@ -1,0 +1,197 @@
+
+body{
+    background-color: #a2bedb;
+}
+
+.table{
+    background-color: #fff;
+}
+
+
+.container {
+    height: auto;
+    top: 80px;
+    position: sticky;
+    width: 100%;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card{
+    width: 100%;
+    height: auto;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.card .card-body{
+    padding: 0px;
+}
+
+.card .d-flex p{
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-right: 5px;
+}
+
+.card-body p{
+    margin-bottom: 5px;
+}
+
+.card-group > .card + .card {
+    border-left: 1px solid black;
+}
+@media (min-width: 576px) {
+    .container{
+        max-width: 95%;
+    }
+}
+
+
+#tabla-detalleConteoVagonesBody td,
+#tabla-crearLotesBody td,
+#tabla-detalleExtrusoraBody td
+{
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+
+
+.dropdown-submenu {
+position: relative;
+}
+
+.dropdown-submenu a::after {
+transform: rotate(-90deg);
+position: absolute;
+right: 6px;
+top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+top: 0;
+left: 100%;
+margin-left: .1rem;
+margin-right: .1rem;
+}
+
+
+
+
+
+
+
+.bs-placeholder{
+    border-radius: .25rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    color: #495057;
+}
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder  {
+    color: #495057 !important;
+    background-color: #fff;
+}
+
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder:active,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:focus,
+.bootstrap-select > .dropdown-toggle.bs-placeholder:hover{
+    background-color: #fff !important;
+}
+
+.btn:not(:disabled):not(.disabled) ,
+.bootstrap-select .dropdown-menu li a {
+    cursor: default !important;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: #e1e1e1 !important;
+}
+
+.btn-light {
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+
+.btn-light:hover, 
+.btn-light:active,
+.btn-light:focus {
+    background-color: #fff;
+}
+
+.btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle {
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+  }
+
+
+.navbar{
+    border-bottom: 2px black solid;
+}
+
+.logout{
+    right: 0 !important;
+    position: absolute !important;
+}
+@media (max-width: 990px) {
+    .logout{
+        position: unset !important;
+    }
+}
+
+
+.invisible{
+    color: transparent;
+    user-select: none;
+}
+
+.table-responsive {
+    display: table;
+}
+
+
+.cell-center{
+    text-align: center;
+}
+
+.cell-bg{
+    background-color: rgb(217, 217, 217);
+}
+
+.cell-readonly{
+    background-color: #ced4da;
+}
+
+.bg-entrada{
+    background-color: rgb(100, 201, 255);
+}
+.bg-salida{
+    background-color: rgb(255, 104, 104);
+}
+
+.bg-dia{
+    background-color: rgb(111, 238, 143);
+}
+
+.bg-noche{
+    background-color: rgb(151, 156, 184);
+}
+
+
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+    color: #000;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #2c4764;;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
