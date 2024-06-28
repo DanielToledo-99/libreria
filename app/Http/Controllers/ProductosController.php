@@ -208,4 +208,30 @@ class ProductosController extends Controller
         }
     }
 
+    public function filterOtherProducts(Request $request)
+    {
+        try{
+            $nombreProducto = $request->input('nombreProducto');
+            $type = $request->input('type');
+            $productosFilter = DB::table('otherproducts')
+                ->where('nombre', 'like', '%' . $nombreProducto . '%');
+            if ($request->has('descripcion')) {
+                $marcaProducto = $request->input('descripcion');
+                $productosFilter->where(function($query) use ($marcaProducto) {
+                    $query->where('descripcion', 'like', '%' . $marcaProducto . '%')
+                          ->orWhere('nombre', 'like', '%' . $marcaProducto . '%');
+                });
+            }
+    
+            $productosFilter = $productosFilter->get();
+    
+            return response()->json(['productos' => $productosFilter], 200);
+        }
+        catch (\Exception $e) {
+            return response()->json([
+                'message' => 'Error al filtrar los productos: ' . $e->getMessage()
+            ], 500);
+        }
+    }
+
 }

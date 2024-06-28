@@ -56,6 +56,7 @@ Route::post('/productos/getother',[ProductosController::class,'otherProducts'])-
 Route::post('/productos/deleteProducto', [ProductosController::class, 'deleteProducto'])->name('productos.deleteProducto');
 Route::post('/productos/create', [ProductosController::class, 'createProductos'])->name('productos.createProductos');
 Route::post('/productos/createOther',[ProductosController::class, 'createOther'])->name('productos.createOther'); 
+Route::post('/productos/filterOtherProducto',[ProductosController::class,'filterOtherProducts'])->name('productos.filterOtherProducts');
 // ----------------------------- ROUTES DETALLES DE LA VENTA ---------------------------------
 
 Route::post('/details/verVenta',[VentaDetalleController::class, 'verVenta'])->name('details.verVenta');

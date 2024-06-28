@@ -53,8 +53,6 @@ $(document).ready(function() {
                 console.warn('Producto inválido encontrado:', producto);
             }
         });
-
-        // Agregar paginación
         $('#pagination').empty();
         if (data.prev_page_url) {
             $('#pagination').append('<a href="' + data.prev_page_url + '" class="btn btn-primary">Anterior</a>');
@@ -115,6 +113,34 @@ $(document).ready(function() {
                 });
             }
         });
+    });
+
+    $('#filterForm').submit(function(event) {
+        event.preventDefault();
+
+        const nombre = $('input[name="nombre"]').val().trim();
+        const descripcion = $('input[name="marca"]').val().trim();
+        const selectOption = $('#selectOption').val();
+        var token = $('meta[name="csrf-token"]').attr('content');
+        if ( selectOption) {
+            $.ajax({
+                url: '/productos/filterOtherProducto', 
+                method: 'POST',
+                data: { _token: token, type: selectOption, nombreProducto:nombre, descripcion:descripcion }, 
+                success: function(response) {
+                    actualizarTabla(response.data, selectOption);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error al obtener los datos: ' + error);
+                }
+            });
+        } else {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Advertencia',
+                text: 'Por favor seleccione un tipo de productos.',
+            });
+        }
     });
 
     $('#selectOption').trigger('change');
